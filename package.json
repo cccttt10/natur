@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/chuntonggao/natur/issues"
   },
-  "homepage": "https://github.com/chuntonggao/natur#readme"
+  "homepage": "https://github.com/chuntonggao/natur#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
