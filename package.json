@@ -18,6 +18,7 @@
   "homepage": "https://github.com/chuntonggao/natur#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "morgan": "^1.9.1",
     "uuid": "^3.3.2"
   }
 }
