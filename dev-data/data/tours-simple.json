@@ -217,5 +217,12 @@
         "duration": 13,
         "difficulty": "easy",
         "id": "fbf74f2d-6c23-488b-951b-1a8a257f0179"
+    },
+    {
+        "name": "test tour",
+        "duration": 10,
+        "difficulty": "easy",
+        "price": 200,
+        "id": "4f3ba1f3-78da-444b-be8d-2695d2533e47"
     }
 ]
