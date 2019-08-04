@@ -16,7 +16,7 @@ mongoose
 		useFindAndModify: false
 	})
 	.then(connection => {
-		console.log(connection.connections);
+		// console.log(connection.connections);
 		console.log('Database connection successful!');
 	});
 
