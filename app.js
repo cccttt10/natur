@@ -6,17 +6,21 @@ const tourRouter = require('./routes/tourRoutes');
 const userRouter = require('./routes/userRoutes');
 const app = express();
 
-// MIDDLEWARES
+// 1) GLOBAL MIDDLEWARES
+
+// Development logging
 if (process.env.NODE_ENV === 'development') app.use(morgan('dev'));
 
+// Body parser
 app.use(express.json());
 
+// Test middleware
 app.use((req, res, next) => {
 	req.requestTime = new Date().toISOString();
 	next();
 });
 
-// ROUTES
+// 2) ROUTES
 app.use('/api/v1/tours', tourRouter);
 app.use('/api/v1/users', userRouter);
 app.all('*', (req, res, next) => {
@@ -28,7 +32,7 @@ app.all('*', (req, res, next) => {
 	);
 });
 
-// ERROR HANDLING MIDDLEWARE
+// 3) ERROR HANDLING MIDDLEWARE
 app.use(globalErrorHandler);
 
 module.exports = app;
