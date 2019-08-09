@@ -126,6 +126,13 @@ tourSchema.virtual('durationWeeks').get(function() {
 	return this.duration / 7;
 }); // cannot use arrow function because we need 'this' keyword
 
+// Virtual populate
+tourSchema.virtual('reviews', {
+	ref: 'Review',
+	foreignField: 'tour',
+	localField: '_id'
+});
+
 // DOCUMENT MIDDLEWARE: runs before .save() and .create(), but not for .insertMany()
 tourSchema.pre('save', function(next) {
 	this.slug = slugify(this.name, { lower: true });
