@@ -36,6 +36,7 @@
     "node": ">=10.0.0"
   },
   "devDependencies": {
-    "ndb": "^1.1.4"
+    "ndb": "^1.1.4",
+    "parcel-bundler": "^1.12.3"
   }
 }
