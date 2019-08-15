@@ -130,6 +130,9 @@ exports.protect = catchAsync(async (req, res, next) => {
 
 	// Grant access to protected route
 	req.user = currentUser;
+
+	// Display user data on rendered website
+	res.locals.user = currentUser;
 	next();
 });
 
@@ -154,7 +157,7 @@ exports.isLoggedIn = async (req, res, next) => {
 				return next();
 
 			// THERE IS A LOGGED IN USER
-			// Grant access to protected route
+			// Display user data on rendered website
 			res.locals.user = currentUser;
 			return next();
 		} catch (err) {
