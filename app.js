@@ -9,7 +9,7 @@ const tourRouter = require('./routes/tourRoutes');
 const userRouter = require('./routes/userRoutes');
 const reviewRouter = require('./routes/reviewRoutes');
 const viewRouter = require('./routes/viewRoutes');
- 
+
 const app = express();
 
 app.set('view engine', 'pug');
@@ -25,6 +25,9 @@ if (process.env.NODE_ENV === 'development') app.use(morgan('dev'));
 
 // Body parser
 app.use(express.json());
+
+// Form data parser
+app.use(express.urlencoded({ extended: true, limit: '10kb' }));
 
 // Cookie parser
 app.use(cookieParser());
