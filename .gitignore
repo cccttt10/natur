@@ -1,6 +1,4 @@
 .cache/*
-bundle.js
-bundle.js.map
 .DS_Store
 .history/
 node_modules/
