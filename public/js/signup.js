@@ -7,7 +7,6 @@ export const signup = async (
 	password,
 	passwordConfirm
 ) => {
-    console.log({ name, email, password, passwordConfirm })
 	try {
 		const res = await axios({
 			method: 'POST',
