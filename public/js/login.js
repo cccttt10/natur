@@ -24,12 +24,15 @@ export const logout = async () => {
 			method: 'GET',
 			url: 'http://127.0.0.1:3300/api/v1/users/logout'
 		});
-		if ((res.data.status = 'success')) 
+		if ((res.data.status = 'success')) {
 			// true: load fresh page from server instead
 			// of loading from cache
-			location.reload(true);
+			showAlert('success ', 'Logged out successfully');
+			window.setTimeout(() => location.assign('/'), 800);
+			// location.reload(true);
+		}
 	} catch (err) {
-		console.log(err.response.data.message)
+		console.log(err.response.data.message);
 		showAlert('error', 'Error logging out! Try again.');
 	}
 };
