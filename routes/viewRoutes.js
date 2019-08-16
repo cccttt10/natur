@@ -24,6 +24,8 @@ router.get(
 	viewController.getLoginForm
 );
 
+router.get('/signup', viewController.getSignupForm);
+
 router.get('/me', authController.protect, viewController.getAccount);
 
 router.get(
