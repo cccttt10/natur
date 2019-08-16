@@ -35,7 +35,7 @@ app.use(express.urlencoded({ extended: true, limit: '10kb' }));
 // Cookie parser
 app.use(cookieParser());
 
-app.user(compression());
+app.use(compression());
 
 // Test middleware
 app.use((req, res, next) => {
