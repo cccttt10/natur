@@ -1096,6 +1096,10 @@ body {
   -ms-flex-direction: column;
   flex-direction: column;
 }
+.card__purchased-label{
+  display: block;
+  top: 1rem;
+}
 .card__header {
   position: relative;
 }

@@ -7,6 +7,11 @@ block content
             each tour in tours
                 .card
                     .card__header
+                        h3.heading-tertirary.card__purchased-label
+                            if tour.purchased
+                                span 
+                                    i.fas.fa-check-circle
+                                span purchased 
                         .card__picture
                             .card__picture-overlay &nbsp;
                             img.card__picture-img(src=`/img/tours/${tour.imageCover}`, alt=`${tour.name}`)

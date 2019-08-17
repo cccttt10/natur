@@ -8,6 +8,22 @@ exports.getOverview = catchAsync(async (req, res, next) => {
 	// 1) Get tour data from collection
 	const tours = await Tour.find();
 
+	// 1.2) Label booked tours as 'purchased' if user is logged in
+	if (res.locals.user) {
+		const bookings = await Booking.find({
+			user: res.locals.user.id
+		});
+		const bookedTourIDs = bookings.map(
+			booking => booking.tour.id
+		);
+		const bookedTours = tours.filter(tour =>
+			bookedTourIDs.includes(tour.id)
+		);
+		tours.forEach(
+			tour => (tour.purchased = bookedTourIDs.includes(tour.id))
+		);
+	}
+
 	// 2) Build template
 
 	// 3) Render that template using tour data from 1)
